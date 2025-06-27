@@ -10,7 +10,6 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { UserAdminComponent } from './pages/user-admin/user-admin.component';
 import { LoginComponent } from './pages/login/login.component';
-import { PrioriterUserComponent } from './pages/prioriter-user/prioriter-user.component';
 import { AppRoutingModule } from './app-routing.module';
 /*
 const routes: Routes = [
@@ -19,7 +18,6 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'account', component: AccountComponent },
-  { path: 'prioriter-user', component: PrioriterUserComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }
 ];*/
@@ -27,7 +25,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,AppRoutingModule,PrioriterUserComponent,LoginComponent,
+    BrowserModule,AppRoutingModule,LoginComponent,
     SignupComponent,RouterModule,
     AccountComponent,
     ProfilComponent,
