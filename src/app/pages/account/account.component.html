@@ -1,0 +1,124 @@
+    <div class="top-header">
+        <div class="header-title">Al Baraka Portail</div>
+        <div class="bank-logo">
+            <img src="assets/Logo.png" alt="Al Baraka Bank Logo">
+        </div>
+    </div>
+<form action="">
+    <div class="main-content-area">
+        <div class="left-sidebar">
+            <div class="user-profile">
+                <div class="profile-avatar-display" id="mainProfileAvatarContainer">
+                    <img src="assets/profile.jpg" alt="Profile Avatar" id="mainProfileAvatar">
+                    <input type="file" id="avatarUpload" accept="image/*" (change)="onAvatarUpload($event)" #avatarUploadInput style="display: none;">
+<button class="upload-button" id="uploadButton" (click)="avatarUploadInput.click()">&#x2191;</button>
+
+
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a class="nav-item active" [routerLink]="['/profil']">
+                    <span class="icon">&#9881;</span> Modification du profil
+                </a>
+                <a class="nav-item active" [routerLink]="['/account']">
+                    <span class="icon">&#128465;</span>Suivi du solde
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a [routerLink]="['/login']" class="logout-link">
+                    Se déconnecter <span class="arrow-icon">&#8594;</span>
+                </a>
+            </div>
+        </div>
+        <div class="right-content">
+            <h2>Account</h2>
+
+            <div class="card rib-section" >
+<div class="card-header">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rib-icon">
+    <rect width="20" height="14" x="2" y="5" rx="2" />
+    <path d="M2 10h20" />
+    </svg>
+    <h3>RIB </h3>
+</div>
+<div class="card-body">
+    <input type="text"  class="rib-input">
+</div>
+</div>
+<br>
+<button class="affecter">Afficher votre solde</button>
+<br> <br>
+
+<div class="card rib-section" >
+<div class="card-header">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wallet-icon">
+    <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h14a2 2 0 0 1 0 4H5a2 2 0 0 0 0 4h14a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2z"/>
+    <path d="M5 10H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3"/>
+</svg>
+    <h3> Solde </h3>
+</div>
+<div class="card-body">
+    <input type="text"  class="rib-input">
+</div>
+</div>
+
+</div>
+    </div>    
+
+</form>
+<!--<div class="container main-app-page">
+    <div class="top-header">
+        <div class="header-title">Al Baraka Portail</div>
+        <div class="bank-logo">
+            <img src="assets/Logo.png" alt="Al Baraka Bank Logo">
+        </div>
+    </div>
+
+    <div class="main-content-area">
+        <div class="left-sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="assets/profile.jpg" alt="User Avatar" id="sidebarUserAvatar">
+                </div>
+                
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="/account" class="nav-item">
+                    <span class="icon">&#128465;</span>Votre Solde Bancaire
+                </a>
+                <a href="/profil" class="nav-item active">
+                    <span class="icon">&#9881;</span> Modifier vos information
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a href="#" class="logout-link">
+                    Se déconnecter <span class="arrow-icon">&#8594;</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <h2>Account</h2>
+
+            <div class="profile-details-section">
+            <form class="profile-edit-form">
+                <div class="form-group">
+                    <label for="rib">Votre RIB</label>
+                    <input type="text" id="rib" placeholder="Entrez votre rib" value="">
+                </div>
+
+                <div class="form-group">
+                    <label for="solde">Votre solde</label>
+                    <input type="decimal" id="decimal" placeholder="" value="">
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+-->

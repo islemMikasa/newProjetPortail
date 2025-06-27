@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="left-panel">
+        <div class="content">
+            <h1>Al Baraka Portail</h1>
+            <p>Créez votre compte pour gérer votre solde bancaire en ligne.</p>
+
+            <h2>S'inscrire</h2>
+
+            <form class="signup-form" (ngSubmit)="onSubmit()" #signupForm="ngForm">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" [(ngModel)]="userDto.username" placeholder="prenom.nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="rib">RIB</label>
+                    <input type="text" id="rib" name="rib" [(ngModel)]="userDto.rib" placeholder="entrez votre rib" required>
+                    <div *ngIf="ribError" class="error-message">{{ ribError }}</div>
+                    </div>
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" [(ngModel)]="userDto.nom" placeholder="Entrez votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" id="prenom" name="prenom" [(ngModel)]="userDto.prenom" placeholder="Entrez votre prenom" required>
+                </div>
+                <div class="form-group">
+                    <label for="numtel">Numéro de téléphone</label>
+                    <input type="text" id="numtel" name="numtel" [(ngModel)]="userDto.numtel" placeholder="Entrez votre numéro téléphone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" [(ngModel)]="userDto.email" placeholder="Entrez votre adresse email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Adresse</label>
+                    <input type="text" id="address" name="address" [(ngModel)]="userDto.address" placeholder="Entrez votre adresse" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" [(ngModel)]="userDto.password" placeholder="Créez votre mot de passe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmer le mot de passe</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirmez votre mot de passe" required>
+                    <div *ngIf="passwordMismatchError" class="error-message">{{ passwordMismatchError }}</div>
+                </div>
+                <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+                <button type="submit" class="btn-signup" >S'inscrire</button>
+
+                <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+            </form>
+
+            <p class="login-text">Vous avez déjà un compte ? <a [routerLink]="['/login']">Se connecter</a></p>
+        </div>
+    </div>
+
+    <div class="right-panel">
+        <img src="assets/LoginPC.png" alt="Illustration liée à l'inscription">
+    </div>
+</div>

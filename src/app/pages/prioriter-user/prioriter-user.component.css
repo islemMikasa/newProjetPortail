@@ -1,0 +1,351 @@
+.container.main-app-page {
+    display: flex;
+    flex-direction: column; /* Pour empiler l'en-tête et le contenu principal */
+    min-height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f7f7f7; /* Couleur de fond générale */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Ombre légère pour l'ensemble */
+    overflow: hidden; /* Empêche le débordement de contenu */
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    background-image: url('../../../../public/assets/Pattern.png'),
+    linear-gradient(to bottom, #f3f1f1ee 0%);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* L'image de fond est fixe par rapport à la fenêtre */
+    background-color: #646464; /* Couleur de fond de base si l'image ne se charge pas */
+}
+
+.header-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #0a0a0abd; /* Couleur du texte pour le contraste */
+}
+
+.bank-logo img {
+    height: 40px; /* Ajustez selon la taille de votre logo */
+}
+
+/* Main Content Area */
+.main-content-area {
+    display: flex;
+    flex: 1; /* Prend l'espace vertical restant */
+}
+
+.left-sidebar {
+    width: 280px;
+    border-right: 1px solid #eee;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('../../../../public/assets/Pattern.png'),
+    linear-gradient(to bottom, #f3f1f1ee 0%);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #646464;
+}
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+}
+
+.sidebar-nav .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    color: #252424d7; /* Ajusté pour le contraste */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.95em;
+}
+
+.sidebar-nav .nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fond plus clair pour l'actif */
+    color: #cc0000; /* Couleur rouge pour le texte actif */
+    font-weight: bold;
+    border-left: 5px solid #cc0000; /* Bordure rouge pour l'élément actif */
+    padding-left: 20px;
+}
+
+.sidebar-nav .nav-item.active:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fond plus clair pour l'actif */
+    color: #cc0000; /* Couleur rouge pour le texte actif */
+    font-weight: bold;
+    border-left: 5px solid #cc0000; /* Bordure rouge pour l'élément actif */
+    padding-left: 20px; /* Ajuste le padding à cause de la bordure */
+}
+
+.sidebar-nav .nav-item .icon {
+    margin-right: 15px;
+    font-size: 1.2em; /* Ajuste la taille de l'icône */
+}
+
+.logout-section {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Ajusté pour le contraste */
+}
+
+.logout-link {
+    display: flex;
+    align-items: center;
+    color: #cc0000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.logout-link:hover {
+    color: #ff3333;
+}
+
+.logout-link .arrow-icon {
+    margin-left: 8px;
+    font-size: 1.2em;
+}
+
+/* Right Content Area (Main Profile Section) */
+.right-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #fdfdfd; /* Cette section reste claire */
+}
+
+.right-content h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.profile-avatar-display {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0; /* Empêche le rétrécissement */
+    border: 3px solid #f8f7f7; /* Bordure pour l'avatar de profil */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-avatar-display .upload-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #dad7d7;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.profile-avatar-display .upload-button:hover {
+    background-color: #a8a8a8;
+}
+
+/* Styles des groupes de formulaire (Général pour tous les formulaires dans right-content) */
+.form-group {
+    margin-bottom: 20px; /* Espacement entre les groupes de formulaire */
+    position: relative; /* Pour les messages d'erreur */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"] {
+    width: calc(100% - 24px); /* Largeur totale moins le padding et la bordure */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #cc0000;
+    outline: none;
+}
+
+.form-group input:disabled {
+    background-color: #f0f0f0;
+    color: #777;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .main-content-area {
+        flex-direction: column; /* Empile la barre latérale et le contenu */
+    }
+
+    .left-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Ajusté pour le fond sombre */
+        padding: 15px 0;
+    }
+
+    .user-profile {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .sidebar-nav {
+        display: flex;
+        flex-wrap: wrap; /* Permet aux éléments de s'envelopper */
+        justify-content: center; /* Centre les éléments de navigation */
+        padding: 0 10px;
+    }
+
+    .sidebar-nav .nav-item {
+        padding: 10px 15px;
+        border-left: none !important; /* Supprime la bordure spécifique pour l'actif */
+        margin: 5px; /* Espacement entre les éléments enveloppés */
+        border-radius: 5px;
+    }
+    .sidebar-nav .nav-item.active {
+        border-bottom: 3px solid #cc0000; /* Utilise une bordure inférieure pour l'actif sur mobile */
+        padding-bottom: 7px; /* Ajuste le padding pour la bordure inférieure */
+        background-color: rgba(255, 255, 255, 0.1); /* Garde un fond clair pour l'actif */
+    }
+
+    .logout-section {
+        border-top: none; /* Supprime la bordure si la navigation est au-dessus */
+        padding: 15px;
+        text-align: center;
+    }
+
+    .right-content {
+        padding: 20px;
+    }
+
+    .profile-avatar-display {
+        margin-bottom: 10px;
+        align-self: center; /* Centre l'avatar lorsqu'il est empilé */
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-header {
+        padding: 10px 20px;
+    }
+    .header-title {
+        font-size: 1.2em;
+    }
+    .bank-logo img {
+        height: 35px;
+    }
+    .right-content h2 {
+        font-size: 1.5em;
+    }
+}
+
+
+
+
+
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 18px 25px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.rib-section {
+    border: 0.5px solid #ebe9e9; /* Light blue border */
+    transition: border-color 0.3s ease;
+}
+
+.rib-section .card-header {
+    background-color: #e6e5e5; /* Light blue background */
+    border-radius: 3px;
+}
+
+.rib-section .rib-icon {
+    color: #18040f; /* Blue icon color */
+    margin-right: 12px;
+    stroke-width: 2;
+}
+
+.rib-section .rib-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-sizing: border-box;
+    background-color: #f8f8f8; /* Default disabled background */
+    color: #333;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.affecter{
+    margin-left: 30%;
+    width: 30%;
+    text-align: center;
+    padding: 12px 25px;
+    background-color: #b40909;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+}

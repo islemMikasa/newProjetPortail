@@ -1,0 +1,135 @@
+<div class="container main-app-page">
+<div class="top-header">
+<div class="header-title">Al Baraka Portail Admin</div>
+<div class="bank-logo">
+    <img src="assets/Logo.png" alt="Al Baraka Bank Logo">
+</div>
+</div>
+
+<div class="main-content-area">
+<div class="left-sidebar">
+    <div class="user-profile">
+    <div class="profile-avatar-display" id="mainProfileAvatarContainer">
+        <img src="assets/profile.jpg" alt="Profile Avatar" id="mainProfileAvatar">
+        <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+        <button class="upload-button" id="uploadButton">↑</button>
+    </div>
+    </div>
+
+    <nav class="sidebar-nav">
+    <a class="nav-item active" [routerLink]="['/user-admin']">
+        <span class="icon">👥</span> Gestion des clients
+    </a>
+    <a class="nav-item active" [routerLink]="['/prioriter-user']">
+        <span class="icon">👥</span> Prioriter des clients
+    </a>
+    </nav>
+
+    <div class="logout-section">
+    <a [routerLink]="['/login']" class="logout-link">
+        Se déconnecter <span class="arrow-icon">→</span>
+    </a>
+    </div>
+</div>
+
+<div class="right-content">
+    <h2>Gestion des Profils Clients</h2>
+
+    <div class="card search-card">
+    <div class="card-header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <h2>Rechercher un Client</h2>
+    </div>
+    <div class="search-form">
+        <div class="form-group">
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" id="username" placeholder="Entrez le nom d'utilisateur..." [(ngModel)]="searchUsername">
+        </div>
+        <button class="btn btn-search" (click)="searchClient()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-button-icon">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+        </svg>
+        Rechercher
+        </button>
+    </div>
+    </div>
+
+    <div class="client-profile-page">
+    <div class="profile-header">
+        <div class="header-title-group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+        </svg>
+        <h2>Profil Client : {{ clientFullName }}</h2>
+        </div>
+    </div>
+
+    <div class="card rib-section">
+        <div class="card-header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rib-icon">
+            <rect width="20" height="14" x="2" y="5" rx="2"/>
+            <path d="M2 10h20"/>
+        </svg>
+        <h3>RIB</h3>
+        </div>
+        <div class="card-body">
+        <input type="text" class="rib-input" [(ngModel)]="ribValue" [disabled]="!isEditing">
+        </div>
+    </div>
+
+    <div class="info-columns">
+        <div class="card personal-info">
+        <div class="card-header">
+            <h3>Informations Personnelles</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+            <label>*Cliquer sur le bouton modifier pour confirmer votre modification*</label>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" [(ngModel)]="nom" >
+            </div>
+            <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" [(ngModel)]="prenom" >
+            </div>
+            <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" [(ngModel)]="email" >
+            </div>
+        </div>
+        </div>
+
+        <div class="card account-info">
+        <div class="card-body">
+            <div class="form-group">
+            <label for="numtel">Numéro de Téléphone</label>
+            <input type="text" id="numtel" [(ngModel)]="numtel" >
+            </div>
+            <div class="form-group">
+            <label for="password">Mot de Passe</label>
+            <input type="password" id="password" [(ngModel)]="password" >
+            </div>
+            <div class="form-group">
+            <label for="balanceInput">Solde Bancaire (TND)</label>
+            <input type="text" id="balanceInput" class="balance-input" [(ngModel)]="balanceAmount" [disabled]="!isEditing">
+            </div>
+            <br>
+            <button class="btn btn-modify" (click)="saveChanges()" *ngIf="isEditing">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="edit-icon">
+                <path d="M12 20h9"/>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+            </svg>
+            Confirmer la Modification
+            </button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</div>

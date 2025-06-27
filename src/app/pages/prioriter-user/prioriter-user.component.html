@@ -1,0 +1,84 @@
+<div class="container main-app-page">
+    <div class="top-header">
+        <div class="header-title">Al Baraka Portail Admin</div>
+        <div class="bank-logo">
+            <img src="assets/Logo.png" alt="Al Baraka Bank Logo">
+        </div>
+    </div>
+
+    <div class="main-content-area">
+        <div class="left-sidebar">
+            <div class="user-profile">
+                <div class="profile-avatar-display" id="mainProfileAvatarContainer">
+                    <img src="assets/profile.jpg" alt="Profile Avatar" id="mainProfileAvatar">
+                    <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+                    <button class="upload-button" id="uploadButton">↑</button>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a class="nav-item active" [routerLink]="['/user-admin']">
+                    <span class="icon">👥</span> Gestion des clients
+                </a>
+                <a class="nav-item active" [routerLink]="['/prioriter-user']">
+                    <span class="icon">👥</span> Prioriter des clients
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a [routerLink]="['/login']" class="logout-link">
+                    Se déconnecter <span class="arrow-icon">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <h2>Prioriter des Clients</h2>
+
+            <div class="card rib-section">
+                <div class="card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rib-icon">
+                        <rect width="20" height="14" x="2" y="5" rx="2" />
+                        <path d="M2 10h20" />
+                    </svg>
+                    <h3>RIB</h3>
+                </div>
+                <div class="card-body">
+                    <input type="text" class="rib-input" [(ngModel)]="rib">
+                </div>
+            </div>
+
+            <div class="card rib-section">
+                <div class="card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wallet-icon">
+                        <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h14a2 2 0 0 1 0 4H5a2 2 0 0 0 0 4h14a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2z"/>
+                        <path d="M5 10H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3"/>
+                    </svg>
+                    <h3>Solde</h3>
+                </div>
+                <div class="card-body">
+                    <input type="text" class="rib-input" [(ngModel)]="solde">
+                </div>
+            </div>
+
+            <div class="card rib-section">
+                <div class="card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="person-icon">
+                        <circle cx="12" cy="7" r="4"/>
+                        <path d="M12 15c-4.7 0-8 3-8 7h16c0-4-3.3-7-8-7z"/>
+                    </svg>
+                    <h3>Prioriter (username)</h3>
+                </div>
+                <div class="card-body">
+                    <select class="rib-input" [(ngModel)]="selectedUsername">
+                        <option value="">Sélectionner un username</option>
+                        <option *ngFor="let username of usernames" [value]="username">{{ username }}</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <button class="affecter" (click)="affecter()">AFFECTER</button>
+            <p class="feedback-message">{{ message }}</p>
+        </div>
+    </div>
+</div>
