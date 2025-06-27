@@ -5,7 +5,6 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { AccountComponent } from './pages/account/account.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { UserAdminComponent } from './pages/user-admin/user-admin.component';
-import { PrioriterUserComponent } from './pages/prioriter-user/prioriter-user.component';
 
 
 const routes: Routes = [
@@ -13,7 +12,6 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'account', component: AccountComponent },
   { path: 'profil', component: ProfilComponent },
-  { path: 'prioriter-user', component: PrioriterUserComponent },
   { path: 'user-admin', component: UserAdminComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }];
